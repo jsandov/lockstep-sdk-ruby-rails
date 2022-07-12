@@ -23,6 +23,8 @@ jobs:
       uses: ruby/setup-ruby@v1
       with:
         ruby-version: 3.1.0
+    - run: bundle install
+    - run: bundle exec rspec
 
     - name: Publish to RubyGems
       if: github.ref == 'refs/heads/main' && github.event_name == 'push' 
